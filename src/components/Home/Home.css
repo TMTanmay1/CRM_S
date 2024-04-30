@@ -1,0 +1,122 @@
+/* Home.css */
+
+.text-content {
+    margin-top: 12vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* Center align the text within left-content */
+  }
+  
+  .text-content p {
+    font-size: 30px; /* Increase font size */
+    font-weight: bold; /* Make text bold */
+  }
+  
+  .text-content span {
+    color: #091a44; /* Change font color of "Manage Your Best." */
+  }
+
+  
+.lottie-animation {
+    width: 40%; /* Set the width of the animation container */
+    height: auto; /* Automatically adjust height based on width */
+    margin: 0 auto; /* Center the animation horizontally */
+  }
+
+  .mission-image{
+    width: 300px;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .additional-content {
+    background-color: #f1f1f1;
+    padding: 20px; /* Adjust padding as needed */
+  }
+
+  .image-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .text1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Ensure the animation is centered within the container */
+  .lottie-container {
+    width: 50%; /* Set to 100% to fill the container */
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    margin-top: -5vh;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Hide overflow to remove any potential extra space */
+  }
+  
+  .loading-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-top: 10vh;
+    width: 40%;
+    margin: 0 auto;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+  }
+  
+  .fadeIn {
+    animation-name: fadeIn;
+  }
+  
+  /* Animation for inner content */
+  .inner-content.animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+  }
+  
+  .inner-content.fadeIn {
+    animation-name: fadeIn;
+  }
+  
+  /* Animation for mission and vision images */
+  .mission-image.animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+  }
+  
+  .mission-image.fadeIn {
+    animation-name: fadeIn;
+  }
+
+  .home-container {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  /* Apply reveal animation when the reveal class is added */
+  .home-container.reveal {
+    opacity: 1;
+  }
+  

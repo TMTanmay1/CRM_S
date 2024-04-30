@@ -1,0 +1,50 @@
+/* Navbar.css */
+
+.navbar {
+    background-color: #fff; /* white color for the navbar */
+  }
+  
+  img{
+    margin: 8px; 
+    width: 120px;
+    height: auto;
+}
+  
+  .options {
+    display: flex;
+    flex-direction: row; /* horizontal alignment */
+    align-items: center;
+    justify-content: end; /* align to the right side */
+  }
+  
+  .optionLink {
+    text-decoration: none; /* remove underline from option links */
+    color: #091a44; /* #091a44 color for options */
+    margin: 8px; /* using pixels for margin */
+  }
+
+  .dropdown-arrow {
+    position: absolute;
+    top: calc(50% + 2px); /* Adjust the top position to center the arrow vertically */
+    right: 0px; /* Adjust the right position to create space between the arrow and text */
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid #091a44; /* Color of the arrow */
+    transition: transform 0.3s ease; /* Add transition for smooth animation */
+  }
+  
+  .dropdown-arrow:hover {
+    transform: translateY(2px) rotate(180deg) scale(1.1); /* Rotate the arrow and scale it on hover */
+    border-bottom-color: #fff; /* Change the color to make it hollow */
+  }
+  
+  /* Media queries for responsiveness */
+  @media (max-width: 600px) {
+    .options {
+      display: none; /* Hide options */
+    }
+  }
+  
