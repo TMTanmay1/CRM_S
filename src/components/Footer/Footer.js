@@ -45,7 +45,7 @@ function Footer() {
                   </a>
                 </Grid>
                 <Grid item>
-                  <a href="https://twitter.com/home" target='_blank'>
+                  <a href="https://twitter.com/SwaLook" target='_blank'>
                     <TwitterIcon sx={{ color: 'white' }} />
                   </a>
                 </Grid>

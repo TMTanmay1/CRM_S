@@ -68,13 +68,13 @@ const Navbar = () => {
             getContentAnchorEl={null}
             keepMounted
           >
-            <MenuItem component={Link} to="/products">
+            <MenuItem>
               CRM Website
             </MenuItem>
           </Menu>
-          <Button component={Link} to="/blog" sx={{ color: '#091a44', fontWeight: 'bold' }}>
+          {/* <Button component={Link} to="/blog" sx={{ color: '#091a44', fontWeight: 'bold' }}>
             Blog/News and Events
-          </Button>
+          </Button> */}
           <Button component={Link} to="/contact-us" sx={{ color: '#091a44', fontWeight: 'bold' }}>
             Contact Us
           </Button>
@@ -105,9 +105,9 @@ const Navbar = () => {
             Product
           </MenuItem>
           
-          <MenuItem component={Link} to="/blog" onClick={handleMobileMenuClose}>
+          {/* <MenuItem component={Link} to="/blog" onClick={handleMobileMenuClose}>
             Blog/News and Events
-          </MenuItem>
+          </MenuItem> */}
           <MenuItem component={Link} to="/contact-us" onClick={handleMobileMenuClose}>
             Contact Us
           </MenuItem>
