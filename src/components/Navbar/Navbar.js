@@ -48,6 +48,9 @@ const Navbar = () => {
           <Button component={Link} to="/about-us" sx={{ color: '#091a44', fontWeight: 'bold' }}>
             About Us
           </Button>
+          <Button component={Link} to="/blogs" sx={{ color: '#091a44', fontWeight: 'bold' }}>
+            Blogs
+          </Button>
           <Button sx={{ color: '#091a44', position: 'relative', fontWeight: 'bold' }} aria-controls="product-menu" aria-haspopup="true" onClick={handleClick}>
             Product
             <div className="dropdown-arrow"></div>
@@ -101,8 +104,12 @@ const Navbar = () => {
           <MenuItem component={Link} to="/about-us" onClick={handleMobileMenuClose}>
             About Us
           </MenuItem>
-          <MenuItem  onClick={handleMobileMenuClose}>
-            Product
+          <MenuItem component={Link} to="/blogs" onClick={handleMobileMenuClose}>
+            Blogs
+          </MenuItem>
+    
+          <MenuItem  onClick={handleMobileMenuClose} >
+            CRM Website
           </MenuItem>
           
           {/* <MenuItem component={Link} to="/blog" onClick={handleMobileMenuClose}>

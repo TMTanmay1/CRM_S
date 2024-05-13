@@ -9,6 +9,8 @@ import Privacy from './components/Privacy/Privacy';
 import Terms from './components/TC/Terms';
 import Benefits from './components/Blogs/Benefits';
 import Streamlining from './components/Blogs/Streamlining';
+import Contact from './components/Contact/Contact';
+import B_main from './components/Blogs/B_main';
 
 function App() {
   return (
@@ -18,10 +20,12 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />   
         <Route path="/about-us" element={<About />} />
-        <Route path="/about-us/benefits-of-using-a-cloud-based-salon-crm-software" element={<Benefits />} />
-        <Route path="/about-us/streamlining-your-salon-operations-with-swalook-a-comprehensive-guide" element={<Streamlining />} />
+        <Route path="/blogs" element={<B_main />} />
+        <Route path="/blogs/benefits-of-using-a-cloud-based-salon-crm-software" element={<Benefits />} />
+        <Route path="/blogs/streamlining-your-salon-operations-with-swalook-a-comprehensive-guide" element={<Streamlining />} />
         <Route path="/privacy-policy" element={<Privacy />} />     
         <Route path="/terms-conditions" element={<Terms />} />
+        <Route path="/contact-us" element={<Contact />} />
       </Routes>
       <Footer/>
       </Router>

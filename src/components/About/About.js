@@ -238,7 +238,7 @@ function About() {
         )}
       </Box>
 
-      <Box sx={{ textAlign: 'center', padding: '20px' }}>
+      {/* <Box sx={{ textAlign: 'center', padding: '20px' }}>
       <Typography
         variant="h4"
         component="div"
@@ -340,7 +340,7 @@ function About() {
           </Typography>
         </Box>
       </Box>
-    </Box>
+    </Box> */}
 
     </>
   );

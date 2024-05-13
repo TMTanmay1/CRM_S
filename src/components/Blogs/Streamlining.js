@@ -7,9 +7,9 @@ function Streamlining() {
     <Container sx={{ paddingLeft: '20px', paddingRight: '20px' }}>
     <Box sx={{ padding: '20px' }}>
     <Typography variant="h4" component="div" color="#091a44" fontWeight="bold" sx={{ backgroundColor: '#f1f1f1', padding: '10px', marginBottom: '20px' }}>
-    <Typography variant="h4" component="div" color="#091a44" fontWeight="bold" sx={{textAlign:'center', textDecoration:'underline', marginBottom:'20px'}}>
+    {/* <Typography variant="h4" component="div" color="#091a44" fontWeight="bold" sx={{textAlign:'center', textDecoration:'underline', marginBottom:'20px'}}>
                     Blogs
-                </Typography>
+                </Typography> */}
         Streamlining your salon operations with Swalook - 5 tips to consider
     </Typography>
     <Typography variant="body1" component="div" color="textPrimary" fontWeight="light" align="left" sx={{ marginBottom: '20px' }}>
