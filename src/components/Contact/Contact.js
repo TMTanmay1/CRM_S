@@ -1,18 +1,25 @@
 import React from 'react';
-import { Container, Typography, TextField, Button, Grid } from '@mui/material';
+import { Container, Typography, TextField, Button, Grid, Box } from '@mui/material';
+import ContactImage from '../../assets/contact.jpg'; // Import your image
 
 function Contact() {
   return (
     <>
-      <Container style={{ marginTop: '50px', display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '20px' }}>
-        <div style={{ backgroundColor: '#f1f1f1', padding: '20px', borderRadius: '5px', marginBottom: '20px' }}>
-          <Typography variant="h4" style={{ color: '#091a44' }}>
-            Contact Customer Support
-          </Typography>
-        </div>
-        <Grid container justifyContent="center">
-          <Grid item xs={12} sm={10} md={8} lg={6}>
-            <div style={{ border: '2px solid #091a44', padding: '20px', borderRadius: '5px' }}>
+    <Container sx={{display:'flex' , justifyContent:' center' , alignItems:'center'}}>
+      <Container style={{ marginTop: '50px', display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '20px' ,}}>
+        <Grid container justifyContent="center" spacing={4} style={{ marginBottom: '30px' }}>
+          
+          <Grid item xs={12} sm={6} md={4}>
+            <Box display="flex" justifyContent="center">
+              <img src={ContactImage} alt="Contact" style={{ width: 'auto', borderRadius: '5px', height:'400px'  }} />
+            </Box>
+          </Grid>
+          
+          <Grid item xs={12} sm={6} md={8}>
+            <div style={{ border: '2px solid #091a44', padding: '20px', borderRadius: '5px', maxWidth: '400px' }}>
+              <Typography variant="h4" style={{ color: '#091a44', marginBottom: '20px' }}>
+                Contact Customer Support
+              </Typography>
               <form>
                 <Grid container spacing={2}>
                   <Grid item xs={12} sm={6}>
@@ -40,6 +47,7 @@ function Contact() {
             </div>
           </Grid>
         </Grid>
+      </Container>
       </Container>
     </>
   );

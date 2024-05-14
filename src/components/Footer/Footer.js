@@ -78,7 +78,7 @@ function Footer() {
               <Grid container direction="column" alignItems="center" sx={{ color: 'white', marginTop: '10px' }}>
                 <Grid item sx={{ display: 'flex', alignItems: 'center' }}>
                   <MailIcon sx={{ marginRight: '5px' }} />
-                  <a href="mailto:info@example.com" style={{ textDecoration: 'underline', color: 'white' }}>info@example.com</a>
+                  <a href="mailto:info@example.com" style={{ textDecoration: 'underline', color: 'white' }}>info@swalook.in</a>
                 </Grid>
                 <Grid item sx={{ display: 'flex', alignItems: 'center', marginTop: '5px' }}>
                   <PhoneIcon sx={{ marginRight: '5px' }} />
