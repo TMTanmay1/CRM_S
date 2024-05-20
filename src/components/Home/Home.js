@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Typography, Grid } from '@mui/material'; // Import Grid from MUI
 import Lottie from 'lottie-react';
-import homeani from '../../assets/home.json'; // Import your Lottie animation JSON file
+import homeani from '../../assets/home.json'; 
 import loading from '../../assets/loading.json';
 import question from '../../assets/question.json';
 import mission from '../../assets/mission.png';
@@ -29,6 +29,7 @@ function Home() {
 
   return (
     <div className={`home-container ${reveal ? 'reveal' : ''}`} ref={ref}>
+      <div className='effect'>
       <Typography variant="body1" align="center" sx={{ fontStyle: 'lighter', marginY: '15px', fontSize: '24px' }}>
         The Ultimate Salon Management Solution
       </Typography>
@@ -48,6 +49,8 @@ function Home() {
           </div>
         </Grid>
       </Grid>
+      </div>
+      
       <div className="additional-content">
         <Grid container spacing={2} className="inner-content animated fadeIn" sx={{ padding: '10px' }}>
           <Grid item xs={12} md={6} className="image-content">
@@ -99,7 +102,7 @@ function Home() {
           So, if you want to take your customer relationships to the next level, try Swalook today!
         </Typography>
       </div>
-      <Grid container spacing={2} className="content-container" sx={{ padding: '10px' }}>
+      <Grid container spacing={2} className="content-container" sx={{ padding: '10px'}}>
         <Grid
           item
           xs={12}

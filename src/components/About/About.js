@@ -10,8 +10,31 @@ import {
 import AboutImage from "../../assets/about.jpg";
 import "./About.css";
 import AboutPoint from "../../assets/About_Points.png";
+import SalonPOSIcon from "@mui/icons-material/Receipt"; // Material-UI icons
+import AppointmentsIcon from "@mui/icons-material/Schedule";
+import MembershipIcon from "@mui/icons-material/People";
+import FeedbackIcon from "@mui/icons-material/RateReview";
+import CatalogIcon from "@mui/icons-material/ShoppingCart";
 import RightArrowIcon from "@mui/icons-material/ChevronRight";
 import { Link } from 'react-router-dom';
+
+const ServiceItem = ({ icon, title, description }) => {
+  return (
+    <Grid item xs={12} sm={6} md={4}>
+      <div className="service-item">
+        {icon}
+        <Typography variant="h6" component="div" color="textPrimary" fontWeight="bold" align="center" sx={{ color: "#091a44" }}>
+          {title}
+        </Typography>
+        <Typography variant="body1" color="textSecondary" align="center">
+          {description}
+        </Typography>
+      </div>
+    </Grid>
+  );
+};
+
+
 
 function About() {
   const [showText, setShowText] = useState(false);
@@ -108,12 +131,13 @@ function About() {
           <img src={AboutPoint} alt="Salon" className="ap_image" />
         </Grid>
         {/* Right div with points */}
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} md={6} >
           <Typography
             variant="h6"
             component="div"
             color="textPrimary"
             fontWeight="bold"
+            fontSize={24}
             align="center"
             sx={{
               marginBottom: "20px",
@@ -123,7 +147,7 @@ function About() {
           >
             Services Offered
           </Typography>
-          <ul>
+          {/* <ul>
             <li>
               <b style={{ color: "#091a44" }}>Salon POS:</b> You can create and
               manage bills for your customers and send them via WhatsApp.
@@ -146,7 +170,35 @@ function About() {
               browse through the digital catalog of services provided by your
               salon.
             </li>
-          </ul>
+          </ul> */}
+
+      <Grid container spacing={3} justifyContent="center" sx={{padding:"10px"}}>
+        <ServiceItem
+          icon={<SalonPOSIcon sx={{ color: "#091a44" }}/>}
+          title="Salon POS"
+          description="You can create and manage bills for your customers and send them via WhatsApp."
+        />
+        <ServiceItem
+          icon={<AppointmentsIcon sx={{ color: "#091a44" }}/>}
+          title="Online Appointments"
+          description="Your customers can schedule appointments with a few clicks."
+        />
+        <ServiceItem
+          icon={<MembershipIcon sx={{ color: "#091a44" }}/>}
+          title="Membership"
+          description="We help you manage membership in your salon and provide customer loyalty benefits."
+        />
+        <ServiceItem
+          icon={<FeedbackIcon sx={{ color: "#091a44" }}/>}
+          title="Reports & Feedback"
+          description="You can get feedback from your customers on how they felt about their visit with you."
+        />
+        <ServiceItem
+          icon={<CatalogIcon sx={{ color: "#091a44" }}/>}
+          title="Digital Catalog"
+          description="Customers can browse through the digital catalog of services provided by your salon."
+        />
+      </Grid>
         </Grid>
       </Grid>
       <Box sx={{ textAlign: "center", padding: "10px" }}>
@@ -237,111 +289,6 @@ function About() {
           </Typography>
         )}
       </Box>
-
-      {/* <Box sx={{ textAlign: 'center', padding: '20px' }}>
-      <Typography
-        variant="h4"
-        component="div"
-        fontWeight="bold"
-        sx={{ marginBottom: '10px', color: '#091a44' }}
-      >
-        Blogs
-      </Typography>
-      <Box
-        sx={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          height: 'fit-content',
-          flexDirection: 'column',
-        }}
-      >
-        <Box
-          component={Link}
-          to="/about-us/streamlining-your-salon-operations-with-swalook-a-comprehensive-guide"
-          sx={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            maxWidth: '80%',
-            border: '1px solid #091a44',
-            padding: '10px',
-            margin: '10px',
-            transition: 'transform 0.3s ease-in-out',
-            '&:hover': {
-              transform: 'scale(1.05)',
-              zIndex: 1,
-            },
-            textDecoration: 'none', // Ensure no default link styling
-          }}
-        >
-          <Typography
-            variant="body1"
-            component="p"
-            fontWeight="light"
-            align="left"
-            sx={{ flex: 1, color: '#091a44' }}
-          >
-            Streamlining your salon operations - 5 tips to consider
-          </Typography>
-          <IconButton sx={{ color: '#091a44' }}>
-            <RightArrowIcon />
-          </IconButton>
-          <Typography
-            variant="body1"
-            component="p"
-            fontWeight="light"
-            align="left"
-            sx={{ cursor: 'pointer' }}
-          >
-            Click here to read
-          </Typography>
-        </Box>
-
-        <Box
-          component={Link}
-          to="/about-us/benefits-of-using-a-cloud-based-salon-crm-software"
-          sx={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            maxWidth: '80%',
-            border: '1px solid #091a44',
-            padding: '10px',
-            margin: '10px',
-            transition: 'transform 0.3s ease-in-out',
-            '&:hover': {
-              transform: 'scale(1.05)',
-              zIndex: 1,
-            },
-            textDecoration: 'none', // Ensure no default link styling
-          }}
-        >
-          <Typography
-            variant="body1"
-            component="p"
-            fontWeight="light"
-            align="left"
-            sx={{ flex: 1, color: '#091a44' }}
-          >
-            Using a cloud-based salon CRM software - 7 considerations for salon owners
-          </Typography>
-          <IconButton sx={{ color: '#091a44' }}>
-            <RightArrowIcon />
-          </IconButton>
-          <Typography
-            variant="body1"
-            component="p"
-            fontWeight="light"
-            align="left"
-            sx={{ cursor: 'pointer' }}
-          >
-            Click here to read
-          </Typography>
-        </Box>
-      </Box>
-    </Box> */}
-
     </>
   );
 }
