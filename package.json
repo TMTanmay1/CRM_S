@@ -1,5 +1,6 @@
 {
   "name": "swalook-crm",
+  "homepage": "www.swalook.in/swalook-website",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
