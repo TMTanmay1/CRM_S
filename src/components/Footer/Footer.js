@@ -81,9 +81,13 @@ function Footer() {
                   <a href="mailto:info@example.com" style={{ textDecoration: 'underline', color: 'white' }}>info@swalook.in</a>
                 </Grid>
                 <Grid item sx={{ display: 'flex', alignItems: 'center', marginTop: '5px' }}>
-                  <PhoneIcon sx={{ marginRight: '5px' }} />
-                  <Typography variant="body2" component="span">+1234567890</Typography>
-                </Grid>
+      <PhoneIcon sx={{ marginRight: '5px' }} />
+      <Typography variant="body2" component="span">
+        <a href="tel:+919870103761" style={{ textDecoration: 'none', color: 'inherit' }}>
+          +91 98701 03761
+        </a>
+      </Typography>
+    </Grid>
                 <Grid item sx={{ display: 'flex', alignItems: 'center', marginTop: '5px' }}>
                   <RoomIcon sx={{ marginRight: '5px' }} />
                   <Typography variant="body2" component="span">123 Street, City, Country</Typography>

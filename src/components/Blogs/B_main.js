@@ -93,7 +93,7 @@ function B_main() {
             align="left"
             sx={{ flex: 1, color: '#091a44' }}
           >
-            Streamlining your salon operations - 5 tips to consider
+            Streamlining your salon operations with Swalook: a comprehensive guide
           </Typography>
           <IconButton sx={{ color: '#091a44' }}>
             <RightArrowIcon />
@@ -135,7 +135,7 @@ function B_main() {
             align="left"
             sx={{ flex: 1, color: '#091a44' }}
           >
-            Using a cloud-based salon CRM software - 7 considerations for salon owners
+           Benefits of using a cloud-based salon customer relationship management software 
           </Typography>
           <IconButton sx={{ color: '#091a44' }}>
             <RightArrowIcon />

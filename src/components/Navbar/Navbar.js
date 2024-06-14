@@ -25,6 +25,11 @@ const Navbar = () => {
     setMobileMenuOpen(false);
   };
 
+  const handleRedirect = (url) => {
+    window.open(url, '_blank', 'noopener,noreferrer');
+    handleMobileMenuClose();
+  };
+
   return (
     <AppBar position="static" sx={{ backgroundColor: '#fff' }}>
       <Toolbar sx={{ justifyContent: 'space-between' }}>
@@ -55,6 +60,7 @@ const Navbar = () => {
             Product
             <div className="dropdown-arrow"></div>
           </Button>
+          
           <Menu
             id="product-menu"
             anchorEl={anchorEl}
@@ -72,8 +78,11 @@ const Navbar = () => {
             keepMounted
           >
             <MenuItem>
-              CRM Website
-            </MenuItem>
+  <a href="https://swalookcrm.in/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+    CRM Website
+  </a>
+</MenuItem>
+
           </Menu>
           {/* <Button component={Link} to="/blog" sx={{ color: '#091a44', fontWeight: 'bold' }}>
             Blog/News and Events
@@ -108,9 +117,10 @@ const Navbar = () => {
             Blogs
           </MenuItem>
     
-          <MenuItem  onClick={handleMobileMenuClose} >
+          <MenuItem onClick={() => handleRedirect('https://swalookcrm.in/')}>
             CRM Website
           </MenuItem>
+
           
           {/* <MenuItem component={Link} to="/blog" onClick={handleMobileMenuClose}>
             Blog/News and Events

@@ -3,6 +3,11 @@
 .navbar {
     background-color: #fff; /* white color for the navbar */
   }
+
+  html , body {
+    height: 100%;
+    width: 100%;
+  }
   
   img{
     margin: 8px; 
@@ -48,3 +53,15 @@
     }
   }
   
+  /* Media queries for responsiveness */
+@media (max-width: 900px) {
+  .options {
+    display: none; /* Hide options */
+  }
+}
+
+@media (min-width: 600px) and (max-width: 900px) {
+  .MuiIconButton-root {
+    display: none; /* Hide menu icon on tablet view */
+  }
+}

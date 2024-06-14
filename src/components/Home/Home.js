@@ -6,12 +6,14 @@ import loading from '../../assets/loading.json';
 import question from '../../assets/question.json';
 import mission from '../../assets/mission.png';
 import vision from '../../assets/vision.png';
+import useMediaQuery from '@mui/material/useMediaQuery'; // Import useMediaQuery
 
 import './Home.css';
 
 function Home() {
   const [reveal, setReveal] = useState(false);
   const ref = useRef(null);
+  const isMobile = useMediaQuery('(max-width:600px)'); // Define a breakpoint for mobile view
 
   const handleScroll = () => {
     if (ref.current) {
@@ -59,7 +61,7 @@ function Home() {
             </div>
           </Grid>
           <Grid item xs={12} md={6} className="text1" sx={{ padding: '10px' }}>
-            <Typography variant="body1" sx={{ textAlign: 'right', marginRight: '3rem' }}>
+            <Typography variant="body1" sx={{ textAlign: isMobile ? 'center' : 'right', marginRight: isMobile ? '0' : '3rem' }}>
               Are you looking for ways to manage customer relationships using multiple tools and spreadsheets? Do you
               find it challenging to keep track of customer interactions and sales opportunities? Then, look no further
               than our CRM system!
@@ -81,7 +83,7 @@ function Home() {
 
         <Grid container className="inner-content animated fadeIn" sx={{ padding: '10px' }}>
           <Grid item xs={12} md={6} className="text1">
-            <Typography variant="body1" sx={{ textAlign: 'left', marginX: '3rem' }}>
+            <Typography variant="body1" sx={{ textAlign: isMobile ? 'center' : 'left', marginX: isMobile ? '0' : '3rem' }}>
               Our CRM system is designed to be user-friendly, so you and your team can start using it right away. It is
               also customizable, so you can tailor it to your business needs. With our system, you'll have all the tools
               to manage your customer relationships and grow your business.
