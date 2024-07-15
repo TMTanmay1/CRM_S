@@ -1,5 +1,5 @@
 import React from 'react'
-import Blogs from '../../assets/blogs.jpg'
+import Blogs from '../../assets/blogs.webp'
 import {
     Box,
     Typography,
@@ -11,8 +11,13 @@ import {
 
   import RightArrowIcon from "@mui/icons-material/ChevronRight";
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function B_main() {
+  const navigate = useNavigate();
+  const handleButtonClick = () => {
+    navigate('/contact-us');
+  };
   return (
     <>
     <Box
@@ -151,6 +156,34 @@ function B_main() {
           </Typography>
         </Box>
       </Box>
+      <div className="button-container">
+        <Button
+          variant="contained"
+          sx={{
+            background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+            color: '#fff',
+            fontWeight: 'bold',
+            padding: '15px 30px',
+            margin: '20px auto',
+            display: 'block',
+            fontSize: '18px',
+            borderRadius: '50px',
+            boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+            transition: 'transform 0.2s',
+            '&:hover': {
+              backgroundColor: '#FF8E53',
+              transform: 'scale(1.05)',
+            },
+            '@media (max-width: 600px)': {
+              fontSize: '16px',
+              padding: '10px 20px',
+            },
+          }}
+          onClick={handleButtonClick}
+        >
+          Request a Demo
+        </Button>
+      </div>
     </Box>
 
       </>

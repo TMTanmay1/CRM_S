@@ -1,16 +1,18 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Typography, Grid } from '@mui/material'; // Import Grid from MUI
+import { Typography, Grid , Button } from '@mui/material'; // Import Grid from MUI
 import Lottie from 'lottie-react';
 import homeani from '../../assets/home.json'; 
 import loading from '../../assets/loading.json';
 import question from '../../assets/question.json';
-import mission from '../../assets/mission.png';
-import vision from '../../assets/vision.png';
+import mission from '../../assets/mission.webp';
+import vision from '../../assets/vision.webp';
 import useMediaQuery from '@mui/material/useMediaQuery'; // Import useMediaQuery
+import { useNavigate } from 'react-router-dom';
 
 import './Home.css';
 
 function Home() {
+  const navigate = useNavigate();
   const [reveal, setReveal] = useState(false);
   const ref = useRef(null);
   const isMobile = useMediaQuery('(max-width:600px)'); // Define a breakpoint for mobile view
@@ -28,6 +30,10 @@ function Home() {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
+  const handleButtonClick = () => {
+    navigate('/contact-us');
+  };
 
   return (
     <div className={`home-container ${reveal ? 'reveal' : ''}`} ref={ref}>
@@ -51,6 +57,35 @@ function Home() {
           </div>
         </Grid>
       </Grid>
+      </div>
+
+     <div className="button-container">
+        <Button
+          variant="contained"
+          sx={{
+            background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+            color: '#fff',
+            fontWeight: 'bold',
+            padding: '15px 30px',
+            margin: '20px auto',
+            display: 'block',
+            fontSize: '18px',
+            borderRadius: '50px',
+            boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+            transition: 'transform 0.2s',
+            '&:hover': {
+              backgroundColor: '#FF8E53',
+              transform: 'scale(1.05)',
+            },
+            '@media (max-width: 600px)': {
+              fontSize: '16px',
+              padding: '10px 20px',
+            },
+          }}
+          onClick={handleButtonClick}
+        >
+          Request a Demo
+        </Button>
       </div>
       
       <div className="additional-content">
@@ -149,6 +184,34 @@ function Home() {
           </Typography>
         </Grid>
       </Grid>
+      <div className="button-container">
+        <Button
+          variant="contained"
+          sx={{
+            background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+            color: '#fff',
+            fontWeight: 'bold',
+            padding: '15px 30px',
+            margin: '20px auto',
+            display: 'block',
+            fontSize: '18px',
+            borderRadius: '50px',
+            boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+            transition: 'transform 0.2s',
+            '&:hover': {
+              backgroundColor: '#FF8E53',
+              transform: 'scale(1.05)',
+            },
+            '@media (max-width: 600px)': {
+              fontSize: '16px',
+              padding: '10px 20px',
+            },
+          }}
+          onClick={handleButtonClick}
+        >
+          Request a Demo
+        </Button>
+      </div>
     </div>
   );
 }

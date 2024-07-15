@@ -7,9 +7,9 @@ import {
   Button,
   IconButton,
 } from "@mui/material";
-import AboutImage from "../../assets/about.jpg";
+import AboutImage from "../../assets/about.webp";
 import "./About.css";
-import AboutPoint from "../../assets/About_Points.png";
+import AboutPoint from "../../assets/About_Points.webp";
 import SalonPOSIcon from "@mui/icons-material/Receipt"; // Material-UI icons
 import AppointmentsIcon from "@mui/icons-material/Schedule";
 import MembershipIcon from "@mui/icons-material/People";
@@ -17,6 +17,7 @@ import FeedbackIcon from "@mui/icons-material/RateReview";
 import CatalogIcon from "@mui/icons-material/ShoppingCart";
 import RightArrowIcon from "@mui/icons-material/ChevronRight";
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const ServiceItem = ({ icon, title, description }) => {
   return (
@@ -38,10 +39,21 @@ const ServiceItem = ({ icon, title, description }) => {
 
 function About() {
   const [showText, setShowText] = useState(false);
-
+  const navigate = useNavigate();
   const handleButtonClick = () => {
     setShowText((prev) => !prev);
   };
+
+
+  const handleToggle = () => {
+    setShowText((prev) => !prev);
+  };
+
+
+  const handleClick = () => {
+    navigate('/contact-us');
+  };
+  
   return (
     <>
       <Box
@@ -113,6 +125,34 @@ function About() {
           offers the following features:
         </Typography>
       </Box>
+      <div className="button-container">
+        <Button
+          variant="contained"
+          sx={{
+            background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+            color: '#fff',
+            fontWeight: 'bold',
+            padding: '15px 30px',
+            margin: '20px auto',
+            display: 'block',
+            fontSize: '18px',
+            borderRadius: '50px',
+            boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+            transition: 'transform 0.2s',
+            '&:hover': {
+              backgroundColor: '#FF8E53',
+              transform: 'scale(1.05)',
+            },
+            '@media (max-width: 600px)': {
+              fontSize: '16px',
+              padding: '10px 20px',
+            },
+          }}
+          onClick={handleClick}
+        >
+          Request a Demo
+        </Button>
+      </div>
       <Grid
         container
         spacing={3}
@@ -147,30 +187,6 @@ function About() {
           >
             Services Offered
           </Typography>
-          {/* <ul>
-            <li>
-              <b style={{ color: "#091a44" }}>Salon POS:</b> You can create and
-              manage bills for your customers and send them via WhatsApp.
-            </li>
-            <li>
-              <b style={{ color: "#091a44" }}>Online Appointments:</b> Your
-              customers can schedule appointments with a few clicks.
-            </li>
-            <li>
-              <b style={{ color: "#091a44" }}>Membership:</b> We help you manage
-              membership in your salon and provide customer loyalty benefits.
-            </li>
-            <li>
-              <b style={{ color: "#091a44" }}>Reports & Feedback:</b> You can
-              get feedback from your customers on how they felt about their
-              visit with you.
-            </li>
-            <li>
-              <b style={{ color: "#091a44" }}>Digital Catalog:</b> Customers can
-              browse through the digital catalog of services provided by your
-              salon.
-            </li>
-          </ul> */}
 
       <Grid container spacing={3} justifyContent="center" sx={{padding:"10px"}}>
         <ServiceItem
@@ -201,21 +217,15 @@ function About() {
       </Grid>
         </Grid>
       </Grid>
-      <Box sx={{ textAlign: "center", padding: "10px" }}>
-        <Button
-          variant="contained"
-          sx={{
-            backgroundColor: "#091a44",
-            color: "white",
-            marginTop: "20px",
-            padding: "10px",
-          }}
-          onClick={handleButtonClick}
-        >
-          Learn More
+      <Box sx={{ margin: '20px', textAlign: 'center' }}>
+        <Button variant="contained" sx={{backgroundColor: "#091a44"}} onClick={handleToggle}>
+          Show More
         </Button>
-        {showText && (
-          <Typography
+      </Box>
+
+      {showText && (
+        <Box sx={{ padding: "20px", maxWidth: "80vw", margin: "0 auto" }}>
+          {/* <Typography
             variant="body1"
             component="p"
             color="textPrimary"
@@ -246,49 +256,62 @@ function About() {
             Swalook is a comprehensive salon and customer management system that
             aims to streamline and optimize the operations of a salon while also
             providing an exceptional customer experience.
-            <ol>
-              <li>
-                <b style={{ color: "#091a44" }}>
-                  Streamlined appointment scheduling -
-                </b>{" "}
-                Swalook lets customers easily book appointments online or
-                through the app, allowing them to choose the service they need,
-                the date and time that suits them, and the preferred stylist.
-                This feature not only saves time for the customers but also
-                allows the salon staff to manage appointments more efficiently.
-              </li>
-              <li>
-                <b style={{ color: "#091a44" }}>
-                  Customizable customer profiles -
-                </b>{" "}
-                Swalook allows customers to create profiles that contain their
-                personal details, service preferences, and past appointment
-                history. This feature enables the salon staff to tailor their
-                services to each customer's unique needs and preferences,
+          </Typography> */}
+          <Grid container spacing={2}>
+            <Grid item xs={12} md={4} sx={{ borderRight: '1px solid #ddd', borderBottom: '1px solid #ddd', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <Typography variant="subtitle1" sx={{ fontWeight: 'bold', textAlign: 'center' , color:'#091A44' }}>
+                Streamlined appointment scheduling
+              </Typography>
+            </Grid>
+            <Grid item xs={12} md={8} sx={{ borderBottom: '1px solid #ddd' }}>
+              <Typography variant="body1">
+                Swalook lets customers easily book appointments online or through the app,
+                allowing them to choose the service they need, the date and time that suits them,
+                and the preferred stylist. This feature not only saves time for the customers but
+                also allows the salon staff to manage appointments more efficiently.
+              </Typography>
+            </Grid>
+            <Grid item xs={12} md={4} sx={{ borderRight: '1px solid #ddd', borderBottom: '1px solid #ddd', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <Typography variant="subtitle1" sx={{ fontWeight: 'bold', textAlign: 'center', color:'#091A44' }}>
+                Customizable customer profiles
+              </Typography>
+            </Grid>
+            <Grid item xs={12} md={8} sx={{ borderBottom: '1px solid #ddd' }}>
+              <Typography variant="body1">
+                Swalook allows customers to create profiles containing personal details,
+                service preferences, and past appointment history. This feature enables the salon
+                staff to tailor their services to each customer's unique needs and preferences,
                 enhancing the overall customer experience.
-              </li>
-              <li>
-                <b style={{ color: "#091a44" }}>
-                  Marketing and loyalty programs -
-                </b>{" "}
-                Swalook includes marketing and loyalty features that allow salon
-                owners to promote their services and reward loyal customers.
-                This feature not only helps to attract new customers but also
-                helps to retain existing ones, creating a loyal customer base
-                that can drive long-term business growth.
-              </li>
-              <li>
-                <b style={{ color: "#091a44" }}>Mobile accessibility -</b>{" "}
-                Swalook is accessible via a mobile app, allowing customers to
-                book appointments, manage their profiles, and access other
-                features. This feature makes it easy for customers to stay
-                connected with their favorite salons, even when they are on the
-                move.
-              </li>
-            </ol>
-          </Typography>
-        )}
-      </Box>
+              </Typography>
+            </Grid>
+            <Grid item xs={12} md={4} sx={{ borderRight: '1px solid #ddd', borderBottom: '1px solid #ddd', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <Typography variant="subtitle1" sx={{ fontWeight: 'bold', textAlign: 'center', color:'#091A44' }}>
+                Marketing and loyalty programs
+              </Typography>
+            </Grid>
+            <Grid item xs={12} md={8} sx={{ borderBottom: '1px solid #ddd' }}>
+              <Typography variant="body1">
+                Swalook includes marketing and loyalty features that allow salon owners to promote
+                their services and reward loyal customers. This feature not only helps to attract
+                new customers but also helps to retain existing ones, creating a loyal customer
+                base that can drive long-term business growth.
+              </Typography>
+            </Grid>
+            <Grid item xs={12} md={4} sx={{ borderRight: '1px solid #ddd' }}>
+              <Typography variant="subtitle1" sx={{ fontWeight: 'bold', textAlign: 'center' , color:'#091A44'}}>
+                Mobile accessibility
+              </Typography>
+            </Grid>
+            <Grid item xs={12} md={8}>
+              <Typography variant="body1">
+                Swalook is accessible via a mobile app, allowing customers to book appointments,
+                manage their profiles, and access other features. This feature makes it easy for
+                customers to stay connected with their favorite salons, even when they are on the move.
+              </Typography>
+            </Grid>
+          </Grid>
+        </Box>
+      )}
     </>
   );
 }

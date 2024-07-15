@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { AppBar, Toolbar, Typography, Button, Menu, MenuItem, IconButton } from '@mui/material';
 import { Link } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu'; // Import MenuIcon for the hamburger icon
-import logoImage from '../../assets/S_logo.png'; // Import your logo image
+// import logoImage from '../../assets/S_logo.webp'; 
+// import logoImage from '../../assets/swalooklogo_2.webp'; 
+import logoImage from '../../assets/logo_s.webp';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -34,7 +36,8 @@ const Navbar = () => {
     <AppBar position="static" sx={{ backgroundColor: '#fff' }}>
       <Toolbar sx={{ justifyContent: 'space-between' }}>
         <Typography variant="h6" component={Link} to="/" sx={{ display: 'flex', alignItems: 'center', textDecoration: 'none', color: '#000' }}>
-          <img src={logoImage} alt="Logo" sx={{ width: '60px', height: 'auto', marginRight: '10px' }} />
+          {/* <img src={logoImage} alt="Logo" sx={{ width: 'auto', height: '60px', marginRight: '10px' }} /> */}
+          <img src={logoImage} alt="Logo" sx={{ width: '50px', height:'30px' , marginRight: '10px' }} />
         </Typography>
         {/* Hamburger icon for mobile view */}
         <IconButton
@@ -77,10 +80,8 @@ const Navbar = () => {
             getContentAnchorEl={null}
             keepMounted
           >
-            <MenuItem>
-  <a href="https://swalookcrm.in/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
-    CRM Website
-  </a>
+            <MenuItem component={Link} to="/crm">
+       CRM Website
 </MenuItem>
 
           </Menu>
@@ -117,7 +118,7 @@ const Navbar = () => {
             Blogs
           </MenuItem>
     
-          <MenuItem onClick={() => handleRedirect('https://swalookcrm.in/')}>
+          <MenuItem component={Link} to="/crm">
             CRM Website
           </MenuItem>
 

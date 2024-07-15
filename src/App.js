@@ -11,6 +11,8 @@ import Benefits from './components/Blogs/Benefits';
 import Streamlining from './components/Blogs/Streamlining';
 import Contact from './components/Contact/Contact';
 import B_main from './components/Blogs/B_main';
+import Test from './components/Test';
+import ErrorPage from './components/ErrorPage';
 
 function App() {
   return (
@@ -26,8 +28,10 @@ function App() {
         <Route path="/privacy-policy" element={<Privacy />} />     
         <Route path="/terms-conditions" element={<Terms />} />
         <Route path="/contact-us" element={<Contact />} />
+        <Route path="/crm" element={<Test />} />
+            
       </Routes>
-      <Footer/>
+      <Footer/>      
       </Router>
     </div>
   );
